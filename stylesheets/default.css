@@ -53,8 +53,9 @@ aside li {
   padding: 5px
 }
 footer {
-      position: absolute;
-      bottom: -300px;
+      position: relative;
+      bottom: -800px;
       left: 45%;
       right: 40%;
+      margin-top: 300px;
 }
