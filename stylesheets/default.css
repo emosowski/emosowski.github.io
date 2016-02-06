@@ -1,0 +1,60 @@
+img {
+    position: relative;
+    top: 75px;
+    left: 75px;
+    height: 196px;
+    width: 200px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+}
+nav ul {
+    color: #666666;
+    font-size: 15px;
+    text-decoration: none;
+    left:50%;
+    position: absolute;
+    margin-top: 250px;
+    margin-left:-340px;
+}
+
+nav li {
+      display: inline;
+      padding: 20px;
+}
+a {
+  color: #666666;
+  text-decoration: none;
+}
+article {
+      left:48%;
+      right: 50%;
+      position: absolute;
+      margin-top: 150px;
+      margin-left:-254px;
+}
+aside {
+      float: right;
+      margin-top: 365px;
+      margin-right: 75px;
+}
+
+div {
+  display: block;
+}
+aside li {
+  display: block;
+  padding: 5px
+}
+footer {
+      position: absolute;
+      bottom: -300px;
+      left: 45%;
+      right: 40%;
+}
