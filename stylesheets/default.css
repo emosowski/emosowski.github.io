@@ -59,3 +59,11 @@ footer {
       right: 40%;
       margin-top: 300px;
 }
+
+form {
+    left:48%;
+    right: 50%;
+    position: absolute;
+    margin-top: 150px;
+    margin-left:-254px;
+}
