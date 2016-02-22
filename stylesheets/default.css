@@ -41,12 +41,13 @@ article {
 }
 aside {
       float: right;
-      margin-top: 365px;
+      margin-top: 360px;
       margin-right: 75px;
 }
 
 div {
   display: block;
+  margin-top: 50px;
 }
 aside li {
   display: block;
@@ -68,3 +69,11 @@ form {
     margin-left:-254px;
 }
 
+aside img {
+  left: 5%;
+  top: 3px;
+  padding: 2px;
+  width: 55px;
+  height: 55px;
+  border: 0;
+}
