@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+  <title>Blog 5</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+<body>
+  <header>
+      <nav>
+        <ul>
+          <li><a href=index.html>BLOG</a></li>
+          <li><a href=”#”>PROJECTS</a></li>
+          <li><a href=”#”>ABOUT ME</a></li>
+          <li><a href=../contact.hmtl>CONTACT</a></li>
+        </ul>
+      </nav>
+  </header>
+  <a href="http://emosowski.github.io/">
+    <img class="img-circle" src="../siteavatar.png" alt="Profile Image">
+  </a>
+  <article>
+    <h1>Blog 5</h1>
+    <h2>Ruby Classes</h2>
+    <h4>February 26, 2016</h4>
+
+      <section>
+      <p>
+        Ruby is an object-oriented programming language and has both classes and objects. A class is a combination of characteristics and functions, and is the blueprint from which individual objects are created. For example, an individual vegetable is an instance of the class of objects known as vegetables. The various characteristics of any vegetable make up the data members of the class vegetables.
+
+      </p>
+      <p>
+        Let's take a look at creating a class in action.
+        <pre>
+          <code>
+        class Vegetable
+            def set_name(string)
+              puts "Setting vegetable name..."
+              @name = string
+            end
+
+            def get_name
+              puts "Returning the vegetable name..."
+              @name
+            end
+        end
+
+        kale = Vegetable.new
+        kale.set_name("kale")
+        puts kale.get_name</code>
+    </pre>
+      </p>
+      <p>
+          Now let's break this down into smaller steps. To create the class we must use the word class plus the capitalized class name.
+        <pre>
+        <code>
+          class Vegetable
+          end</code>
+    </pre>
+    </p>
+    <p>
+      Then we define our method set_name that takes a string as a parameter. After the puts comes our first instance variable.
+      Instance variables are prefixed with a single @ sign. Instance variables differ from local variables in that they are scoped to the class and can be accessed by any method in the class. This means that when we move along to our next method, we will still be able to access the @name instance variable even though it was created in the previous method. In our example, we set the instance variable @name = to the string input. The inputted string will now be accessible in any method in the class through the instance variable @name.
+
+      <pre>
+        <code>
+          class Vegetable
+            def set_name(string)
+              puts "Setting vegetable name..."
+              @name = string
+            end
+          </code></pre>
+
+
+    </p>
+      <p>
+        Next we create our second method get_name which takes 0 parameters. Checkout the instance variable from our previous method @name before the end of the method. This will carry the string input from the first method into this second method.
+            <pre>
+            <code>
+            def get_name
+              puts "Returning the vegetable name..."
+              @name
+            end</code>
+        </pre>
+    </p>
+    <p>
+      Finally, we use our driver code to create a new vegetable, kale, and call both the set_name method, as well as the get_name method. Both of the methods contained within our class are actually instance methods. Instance methods can only be called on a particular instance of the class. If we tried to call either of our instance methods directly on the class, we would get an error. Therefore, we must create a new instance of Vegetable with Vegetable.new so that we can call our instance methods.
+      <pre>
+      <code>
+        kale = Vegetable.new
+        kale.set_name("kale")
+        puts kale.get_name</code>
+      </pre>
+
+      Our output will look like this:
+
+      <pre>
+      <code>
+        Setting vegetable name...
+        Returning the vegetable name...
+        kale</code>
+    </pre>
+      </section>
+    </article>
+
+        <!-- copy and paste as many sections as you want to add paragraphs -->
+      </section>
+  <aside>
+      <ul>
+        <li><a href=https://www.facebook.com/emily.osowski.1>
+        <img src=../facebookIcon.png alt="Facebook Icon"></li>
+        <li><a href=https://www.linkedin.com/in/emily-osowski-b04a64a3>
+        <img src=../linkedinIcon.png alt="Linkedin Icon"></li>
+        <li><a href=https://github.com/emosowski><img src=../githubIcon.png alt="Github Icon"></li>
+      </ul>
+<!--      <div>
+        <h3><a href=”#”>SEARCH</a></h3>
+        <h3><a href=”#”>POST ARCHIVE</a></h3>
+        <h3><a href=”#”>BLOG TAGS</a></h3>
+      </div>-->
+  </aside>
+  <footer><p>Copyright &copy; 2016</p></footer>
+</body>
+</html>
