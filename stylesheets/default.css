@@ -78,11 +78,3 @@ aside img {
   height: 55px;
   border: 0;
 }
-
-section {
-      left:40%;
-      right: 25%;
-      position: absolute;
-      margin-top: 150px;
-      margin-left:-254px;
-}
