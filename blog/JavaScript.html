@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+  <title>Blog Title</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+<body>
+  <header>
+      <nav>
+        <ul>
+          <li><a href=index.html>BLOG</a></li>
+          <li><a href=../projects/index.html>PROJECTS</a></li>
+          <li><a href=../about.html>ABOUT ME</a></li>
+          <li><a href=../contact.html>CONTACT</a></li>
+        </ul>
+      </nav>
+  </header>
+  <a href="http://emosowski.github.io/">
+    <img class="img-circle" src="../siteavatar.png" alt="Profile Image">
+  </a>
+  <article>
+    <h1>Blog 6</h1>
+    <h2>JavaScript Objects vs. Ruby Hashes</h2>
+    <h4>March 5, 2016</h4>
+
+      <section>
+      <p>
+          Starting to learn JavaScript after getting a basic grasp on Ruby can be overwhelming. Luckily, in many cases, once you become familiar with the different words and commands that correspond between the two languages, the syntax and behavior is actually pretty similar.
+
+      </p>
+      <p>
+          This is, in fact, the case when it comes to JavaScript objects and Ruby hashes. Objects can be used to contain a collection with values. Sound familiar? Yep, sounds a whole lot like a hash in Ruby. Now we get into the naming differences between the two languages. In JavaScript, objects have properties with a respective value. In Ruby, hashes have keys with a respective value. It is important to note that while in Ruby hash keys can be any type, properties can only be variables. Let's take a look first at an object in JavaScript and then at a hash in Ruby to see just how similar they look and behave.
+      </p>
+      <p>
+        <pre>
+          <code>
+        var food = {
+          meat: "chicken",
+          vegetable: "kale",
+          fruit: "apple",
+          grain: "quinoa",
+        };
+
+        // To access a JavaScript value use dot notation with the property name
+        food.meat;
+        // => "chicken"
+
+
+        // To change a JavaScript value use dot notation with
+        // the property name and set it equal to the new value
+        food.vegetable = "spinach";
+
+        // To add a new property and value use dot notation with the new property name
+        // and set it equal to the value
+        food.dairy = "cheese";
+
+        // To delete an existing property or value use delete and dot notation with the property
+        // name. This will delete both property and value.
+        delete food.fruit;
+
+        // To write out the object to the text output device
+        console.log(food);
+
+        var food = {
+          meat: "chicken",
+          vegetable: "spinach",
+          grain: "quinoa",
+          dairy: "cheese",
+        };</code>
+          </pre>
+      </p>
+      <p>
+        Now let's refresh our memories of how a hash works in Ruby.
+
+        <pre>
+          <code>
+
+        food_groups = {
+          meat: "chicken",
+          vegetable: "kale",
+          fruit: "apple",
+          grain: "quinoa",
+        }
+
+        # To access a Ruby hash value use brackets and the key
+        food_groups[:meat]
+        # => "chicken"
+
+        # To modify a value use brackets and the key equal to the new value
+        food_groups[:vegetable] = "spinach"
+
+        # To add a new key and value use bracket notation and the new key equal to the value
+        food_groups[:dairy] = "cheese"
+
+        # To delete an existing key and value use delete with the key
+        food_groups.delete(:fruit)
+
+        # To put the hash to the text output device
+        puts food_groups
+
+        food_groups = {
+          meat: "chicken",
+          vegetable: "spinach",
+          grain: "quinoa",
+          dairy: "cheese",
+        }</code>
+        </pre>
+      </p>
+      <p>
+        Comparing the two, we can see that they are very similar in how they look and function. Differences in names and slight differences in syntax may feel cumbersome at first. Once we look at both an object in JavaScript and a hash in Ruby side by side, turns out it's not so difficult to switch between the langauges after all.
+      </p>
+      </section>
+    </article>
+
+        <!-- copy and paste as many sections as you want to add paragraphs -->
+      </section>
+  <aside>
+      <ul>
+        <li><a href=https://www.facebook.com/emily.osowski.1>
+        <img src=../facebookIcon.png alt="Facebook Icon"></li>
+        <li><a href=https://www.linkedin.com/in/emily-osowski-b04a64a3>
+        <img src=../linkedinIcon.png alt="Linkedin Icon"></li>
+        <li><a href=https://github.com/emosowski><img src=../githubIcon.png alt="Github Icon"></li>
+      </ul>
+<!--      <div>
+        <h3><a href=”#”>SEARCH</a></h3>
+        <h3><a href=”#”>POST ARCHIVE</a></h3>
+        <h3><a href=”#”>BLOG TAGS</a></h3>
+      </div>-->
+  </aside>
+  <footer><p>Copyright &copy; 2016</p></footer>
+</body>
+</html>
