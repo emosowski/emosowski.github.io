@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<head>
+  <title>Blog Title</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/cheat-sheet.css">
+</head>
+<body>
+  <header>
+      <nav>
+        <ul>
+          <li><a href=index.html>BLOG</a></li>
+          <li><a href=../projects/index.html>PROJECTS</a></li>
+          <li><a href=../about.html>ABOUT ME</a></li>
+          <li><a href=../contact.html>CONTACT</a></li>
+        </ul>
+      </nav>
+  </header>
+  <a href="http://emosowski.github.io/">
+    <img class="img-circle" src="../siteavatar.png" alt="Profile Image">
+  </a>
+  <article>
+    <h1>CHEAT SHEET</h1>
+    <h2>Looping in Ruby and JavaScript</h2>
+    <h4></h4>
+
+      <section>
+      <p>
+          <h3>Ruby</h3>
+          <ul>
+          <li>provides all sorts of looping methods: each, map, inject, times, etc.</li>
+          </ul>
+      </p>
+      <p>
+          <h3>JavaScript</h3>
+          <ul>
+          <li>uses two keywords for all looping operations: for and while</li>
+          </ul>
+      </p>
+      <p>
+<h3>Reviewing Loops</h3>
+
+All loops can be boiled down to two basic types:
+<ol>
+<li>Loops that perform a certain action a set number of times</li>
+<li>Loops that perform a certain action until a specified condition is met</li>
+</ol>
+In Ruby, we can identify the first type in methods that execute a block of code either (1) a pre-defined number of iterations (e.g. Integer#times) or (2) for every element in a collection (Array#each, Enumerable#reject, etc.). In JavaScript, all of these kinds of loops are covered by the for keyword.
+
+The second type is exemplified in the while keyword, which both Ruby and JavaScript implement. We'll cover while loops first.
+      </p>
+      <p>
+<h3>While Loops</h3>
+
+A while loop is the simplest type of looping operation: do something until a condition evaluates to false.
+
+<h4>Ruby</h4>
+<pre>
+  <code>
+    n = 1
+
+    while n <= 5
+      puts "n is equal to #{n}"
+      n += 1
+    end
+  </code>
+</pre>
+<h4>JavaScript</h4>
+<pre>
+  <code>
+    var n = 1;
+
+    while (n <= 5) {
+      console.log("n is equal to " + n);
+      n = n + 1;
+    }
+</code>
+</pre>
+Before every iteration in a while loop, the conditional statement is evaluated. If it is true, the loop runs again. If it is false, the loop stops. In this case, the loop will run as long as the variable n is less than or equal to 5.
+      </p>
+      <p>
+      <h3>For Loops</h3>
+
+A for loop, as mentioned above, is useful for looping with a given number of iterations. Use it when you want to do something x times, such as changing the values in an array or counting the number of vowels in a string.
+
+<h4>Ruby</h4>
+<pre>
+  <code>
+    for num in 1..10
+      puts num
+    end
+
+    x = (1..10)
+    x.each {|y| puts y}
+  </code>
+</pre>
+<h4>JavaScript</h4>
+  <pre>
+  <code>
+    for (var i = 1; i <= 10; i++) {
+      console.log(i)
+    }</code>
+  </pre>
+
+      </p>
+      <p>
+<h3>Looping Through Arrays</h3>
+
+<h4>Ruby</h4>
+<pre>
+  <code>
+    dogs = ["husky", "great dane", "labrador retriever", "chihuahua",
+    "terrier"]
+
+    dogs.each {|x| puts x}
+    </code>
+</pre>
+
+<h4>JavaScript</h4>
+<pre>
+  <code>
+    var dogs = ["husky", "great dane", "labrador retriever", "chihuahua",
+    "terrier"];
+
+    for (var i = 0; i < dogs.length; i++) {
+      console.log(dogs[i]);
+    }
+</code>
+</pre>
+
+It's all in the .length. Since JavaScript does not have an each() method we have to use array indexing to access the element each time.
+
+As an example, let's say that we want to sort an array of integers into two arrays: odds and evens. In order to accomplish this, we have to iterate through each element in the source array, determine whether it is odd or even, and the shove it into the appropriate destination array. We need a loop that will execute as many times as there are elements in the array. Take a look at how we would write this, and try it out in the browser console:
+
+<pre>
+  <code>
+// First, we set up the source and destination arrays
+    var integers = [3,8,1,6,2,0,5,7];
+    var odds     = [];
+    var evens    = [];
+
+// Then define the loop
+    for (var n = 0; n < integers.length; n++) {
+      if (integers[n] % 2 === 0) {
+        evens.push(integers[n]);
+      }
+      else {
+        odds.push(integers[n]);
+      }
+    }
+
+  console.log(integers);
+  console.log(odds);
+  console.log(evens);
+</code>
+</pre>
+
+<h4>for ... in ...</h4>
+
+There is another way to write for loops in JavaScript that is a bit closer to looping in Ruby.
+
+Instead of writing for with a series of statements outlining the parameters of the loop (intial value, conditional, incrementor/decrementor), we can use the for (x in y) syntax, where x is a variable representing an incrementable value and y represents an object with a length property, such as Array.
+
+<pre>
+  <code>
+    var nums = [6,0,1,9,3];
+
+    for (i in nums) {
+       console.log(i);
+    }
+</code>
+</pre>
+
+The i variable still acts as an incrementor, just like the longhand syntax (for (var i=0; i<n; i++)) above. NOTE: It does not hold the value of each element in the array.
+
+<p>for...in will look for any enumerable properties available to the object, including any in the prototype chain. This can introduce unintended data into your loop! Run this code in your console to see an example:
+
+<pre>
+  <code>
+    testArray = [1,2,3,4,5]
+
+    for (i in testArray) {
+      console.log(testArray[i])
+    }
+// outputs 1 2 3 4 5 as expected
+
+// now lets add a property to the prototype chain
+
+    Array.prototype.newProp = "I live in the Array prototype!"
+
+    for (i in testArray) {
+      console.log(testArray[i])
+    }
+</code>
+  </pre>
+
+To combat this we can either use the long form for loop, or you can add this line to make sure that the for..in loop does not try to look up the prototype chain.
+
+<pre>
+  <code>
+    testArray = [1,2,3,4,5]
+
+    Array.prototype.newProp = "I live in the Array prototype!"
+
+    for (i in testArray) {
+      if (testArray.hasOwnProperty(i))
+        console.log(testArray[i])
+    }
+  </code>
+</pre>
+  </p>
+      <p>
+      <h3>Each, Map, Select, Max</h3>
+JavaScript does not provide looping methods in the same way that Ruby does. Here are examples of how would we reproduce Ruby-like looping methods in JavaScript.
+
+<h4>Each</h4>
+<pre>
+  <code>
+// Array#each
+    var each = function(array, func) {
+      for (var i=0; i < array.length; i++) {
+        func(array[i]);
+      }
+    };
+  </code>
+</pre>
+The each() function defined above takes two arguments: an array and a function. each() then iterates through every element in the array and passes it to the function func (we can't use the word function for a parameter since it is a reserved word).
+
+What is the purpose of the func parameter? In Ruby, you might call Array#each like this:
+
+[1,2,3,4].each { |n| puts n }
+The { |n| puts n } is the block of code passed to each. JavaScript does not have a separate object for blocks, so we instead use a callback function: a function called as an argument from another function. The parameter func stands in for a function which will be called with the argument array[i].
+
+Here is an example of how you could use this function:
+<pre>
+  <code>
+// Define an array
+    var bugs = ["beetle", "spider", "yellow jacket", "firefly"];
+
+// Execute the each() function, passing it a  callback function
+    each(bugs, function(x) { console.log(x); });
+</code>
+</pre>
+<h4>Map</h4>
+
+Ruby's Array#map method will pass each element in an array to a block, and then return a new array of the modified elements. Here is how we can accomplish this in JavaScript:
+<pre>
+  <code>
+    var map = function(array, func) {
+      var results = [];
+
+      for (var i=0; i < array.length; i++) {
+        results.push(func(array[i]));
+      }
+
+      return results;
+    };
+</code>
+</pre>
+Using map() would then look something like this:
+<pre>
+  <code>
+// Source array:
+    var nums = [5,12,2,81,30];
+
+// Function to use:
+    var timesTwo = function(x) { return x * 2 };
+
+    var numsTimesTwo = map(nums, timesTwo);
+    numsTimesTwo; // => [10, 24, 4, 162, 60]
+</code>
+</pre>
+Note the use of the return keyword in the argument function. If left out, every function call in the loop would return undefined, giving us an array of undefined elements.
+
+<h4>Select</h4>
+
+select is similar to map except that we use the callback function to provide a truthy or falsey value for the conditional statement.
+<pre>
+  <code>
+    var select = function(array, func) {
+      var results = [];
+
+    for (var i=0; i < array.length; i++) {
+      if (func(array[i])) {
+        results.push(array[i]);
+      }
+    }
+
+    return results;
+    };
+    </code>
+</pre>
+Try using select on the following arrays to filter out unwanted values:
+<pre>
+  <code>
+// Select the schools with names that have an 'r' in them:
+    var schools = ["Berkeley", "Notre Dame", "Chicago", "Stanford", "Tulane"];
+
+// Select the multiples of 5:
+    var numbers = [4,10,39,105,73,20,15];
+
+// Select the sub-arrays that contain less than 3 elements
+    var grid = [ [0,1,0,0],
+             [1,0,1],
+             [1,1,0,0,1],
+             [0,1],
+             [1,0,0,0] ];
+    </code>
+</pre>
+<h4>Max</h4>
+
+Finally, Array#max: the simplest of the four. No need to pass a callback function, since all we are doing is returning the largest number.
+<pre>
+  <code>
+    var max = function(array) {
+      var biggest = array[0];
+
+      for (var i=0; i < array.length; i++) {
+        if (array[i] > biggest) {
+          biggest = array[i];
+        }
+      }
+
+      return biggest;
+    };
+</code>
+</pre>
+</p>
+      </section>
+    </article>
+
+        <!-- copy and paste as many sections as you want to add paragraphs -->
+      </section>
+  <aside>
+      <ul>
+        <li><a href=https://www.facebook.com/emily.osowski.1>
+        <img src=../facebookIcon.png alt="Facebook Icon"></li>
+        <li><a href=https://www.linkedin.com/in/emily-osowski-b04a64a3>
+        <img src=../linkedinIcon.png alt="Linkedin Icon"></li>
+        <li><a href=https://github.com/emosowski><img src=../githubIcon.png alt="Github Icon"></li>
+      </ul>
+<!--      <div>
+        <h3><a href=”#”>SEARCH</a></h3>
+        <h3><a href=”#”>POST ARCHIVE</a></h3>
+        <h3><a href=”#”>BLOG TAGS</a></h3>
+      </div>-->
+  </aside>
+  <footer><p>Copyright &copy; 2016</p></footer>
+
+
+</body>
+</html>

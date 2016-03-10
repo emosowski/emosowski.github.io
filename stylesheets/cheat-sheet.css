@@ -26,8 +26,10 @@ pre {
   background-color: #f7f7f7;
 }
 
-code {
-  font-family: 'Montserrat', sans-serif;
-}
 
-
+footer {
+      position: absolute;
+      bottom: -5500px;
+      left: 45%;
+      right: 40%;
+      margin-top: 300px;
