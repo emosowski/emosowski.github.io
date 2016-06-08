@@ -1,2 +1,2 @@
 # emosowski.github.io
-My DBC Phase 0 github pages site!
+Emily Osowski - Full Stack Developer
